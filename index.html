@@ -17,6 +17,8 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://jsautorepairs.github.io/images/unit.jpg">
 <meta name="theme-color" content="#14512f">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
 
 <style>
   @font-face{font-family:"Canela";src:url("fonts/CanelaDeck-Medium.otf") format("opentype");font-weight:500;font-display:swap}
@@ -54,8 +56,8 @@
   /* top bar */
   .topbar{border-bottom:1px solid var(--line)}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
-  .brand{font-family:"Canela",serif;font-size:22px;color:var(--green-700)}
-  .brand b{color:var(--ink);font-weight:500}
+  .brand{display:block;line-height:0}
+  .brand img{height:50px;width:auto}
   .topbar a.call{display:none;text-decoration:none;font-weight:600;color:var(--green-700);font-size:15px}
   @media(min-width:860px){.topbar a.call{display:inline}}
 
@@ -124,7 +126,7 @@
 
 <!-- TOP BAR -->
 <div class="topbar"><div class="wrap">
-  <div class="brand"><b>JS</b> Auto Repairs</div>
+  <a class="brand" href="#top" aria-label="JS Auto Repairs"><img src="images/logo.png" alt="JS Auto Repairs logo"></a>
   <a class="call" href="tel:+447759336969">07759 336969</a>
 </div></div>
 
@@ -208,7 +210,8 @@
 </div></section>
 
 <footer><div class="wrap">
-  <span>JS Auto Repairs · Rear of 1841 Leek Road, Stoke-on-Trent, ST2 7AD</span>
+  <img src="images/logo-full.jpg" alt="JS Auto Repairs" style="height:78px;width:auto">
+  <span>Rear of 1841 Leek Road, Stoke-on-Trent, ST2 7AD</span>
   <a href="tel:+447759336969">07759 336969</a>
 </div></footer>
 
