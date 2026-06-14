@@ -4,167 +4,213 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ====== EDIT THESE ====== -->
-<!-- Business name placeholder: change "JS Auto Repairs" everywhere -->
-<!-- Phone number placeholder: change 447000000000 (WhatsApp, no + no spaces) and 07000 000000 (display) -->
-<!-- ======================== -->
+<!-- ====== EDIT THESE ======
+  Business name: "JS Auto Repairs"
+  Phone (WhatsApp): 447759336969  |  Display: 07759 336969
+  Photos live in /images/  (hero.jpg = under-car shot, unit.jpg = garage exterior)
+========================= -->
 
-<title>JS Auto Repairs | Car Servicing & Repairs in Milton, Stoke-on-Trent</title>
-<meta name="description" content="Honest, affordable car repairs in Milton, Stoke-on-Trent. Servicing, brakes, tyres, exhausts, diagnostics and welding. Last-minute slots, no dealership prices. Message on WhatsApp for a quick quote.">
-
+<title>JS Auto Repairs | Car Servicing & Repairs in Stoke-on-Trent</title>
+<meta name="description" content="Honest, affordable car repairs in Stoke-on-Trent. Servicing, brakes, tyres, exhausts, diagnostics and welding. Last-minute slots, no dealership prices. Message on WhatsApp for a quick quote.">
 <meta property="og:title" content="JS Auto Repairs | Car Servicing & Repairs in Stoke-on-Trent">
-<meta property="og:description" content="Honest, affordable car repairs in Milton, Stoke. Fast turnaround, WhatsApp a quote in minutes.">
+<meta property="og:description" content="Honest, affordable car repairs in Stoke. Fast turnaround, WhatsApp a quote in minutes.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://jsautorepairs.github.io/images/unit.jpg">
+<meta name="theme-color" content="#14512f">
 
 <style>
+  @font-face{font-family:"Canela";src:url("fonts/CanelaDeck-Medium.otf") format("opentype");font-weight:500;font-display:swap}
+  @font-face{font-family:"CanelaText";src:url("fonts/CanelaText-Regular.otf") format("opentype");font-weight:400;font-display:swap}
+  @font-face{font-family:"NeueHaas";src:url("fonts/NeueHaas-Roman.otf") format("opentype");font-weight:400;font-display:swap}
+  @font-face{font-family:"NeueHaas";src:url("fonts/NeueHaas-Medium.otf") format("opentype");font-weight:600;font-display:swap}
+
   :root{
-    --bg:#0f1115;
-    --panel:#171a21;
-    --line:#262b35;
-    --text:#eef1f6;
-    --muted:#9aa3b2;
-    --accent:#ff6a2b;
+    --green:#1c6b46;
+    --green-700:#14512f;
+    --green-50:#eef4ef;
+    --ink:#16150f;
+    --muted:#586059;
+    --line:#e3e8e2;
+    --white:#ffffff;
     --wa:#25d366;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+  body{font-family:"NeueHaas",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--white);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Canela",Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.06}
   a{color:inherit}
+  img{display:block;max-width:100%}
 
-  /* sticky mobile CTA bar */
-  .cta-bar{
-    position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:8px;
-    padding:10px;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line);
-  }
-  .cta-bar a{flex:1;text-align:center;padding:14px;border-radius:12px;font-weight:700;text-decoration:none;font-size:15px}
+  /* sticky mobile CTA */
+  .cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:8px;padding:10px;
+    background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+  .cta-bar a{flex:1;text-align:center;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;font-size:15px}
   .btn-wa{background:var(--wa);color:#04210f}
-  .btn-call{background:var(--panel);color:var(--text);border:1px solid var(--line)}
+  .btn-call{background:var(--white);color:var(--ink);border:1px solid var(--line)}
+  @media(min-width:860px){.cta-bar{display:none}}
+
+  /* top bar */
+  .topbar{border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+  .brand{font-family:"Canela",serif;font-size:22px;color:var(--green-700)}
+  .brand b{color:var(--ink);font-weight:500}
+  .topbar a.call{display:none;text-decoration:none;font-weight:600;color:var(--green-700);font-size:15px}
+  @media(min-width:860px){.topbar a.call{display:inline}}
 
   /* hero */
-  header.hero{padding:64px 0 40px;border-bottom:1px solid var(--line);
-    background:radial-gradient(1200px 400px at 70% -10%, rgba(255,106,43,.12), transparent);}
-  .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
-  h1{font-size:clamp(30px,6vw,46px);line-height:1.08;margin:12px 0 14px;font-weight:800}
-  .sub{color:var(--muted);font-size:18px;max-width:560px}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-  .hero-cta a{padding:14px 22px;border-radius:12px;font-weight:700;text-decoration:none}
-  .hero-cta .btn-wa{background:var(--wa);color:#04210f}
-  .hero-cta .btn-call{background:transparent;color:var(--text);border:1px solid var(--line)}
-  .trust{display:flex;flex-wrap:wrap;gap:18px;margin-top:24px;color:var(--muted);font-size:14px}
-  .trust span{display:flex;align-items:center;gap:7px}
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block}
+  .hero{position:relative;color:#fff;min-height:74vh;display:flex;align-items:flex-end;
+    background:#11261b url("images/hero.jpg") center 35%/cover no-repeat}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,20,14,.25) 0%,rgba(10,20,14,.55) 55%,rgba(8,17,12,.9) 100%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:90px;padding-bottom:48px}
+  .eyebrow{display:inline-block;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px;
+    color:#bfe6cf;margin-bottom:16px}
+  .hero h1{font-size:clamp(34px,6.4vw,60px);max-width:14ch}
+  .hero p{margin:16px 0 26px;font-size:clamp(16px,2.2vw,19px);max-width:46ch;color:#e8efe9}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .cta a{padding:15px 24px;border-radius:11px;font-weight:600;text-decoration:none;font-size:16px}
+  .cta .btn-wa{background:var(--wa);color:#04210f}
+  .cta .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
 
-  section{padding:48px 0;border-bottom:1px solid var(--line)}
-  h2{font-size:26px;font-weight:800;margin-bottom:6px}
-  .lead{color:var(--muted);margin-bottom:26px;max-width:620px}
+  /* trust strip */
+  .trust{background:var(--green-700);color:#eaf3ec}
+  .trust .wrap{display:flex;flex-wrap:wrap;gap:10px 30px;padding:16px 22px;font-size:14.5px;justify-content:center;text-align:center}
+  .trust span{display:flex;align-items:center;gap:8px}
+  .tick{color:#9fe3b8;font-weight:700}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
-  .card h3{font-size:17px;margin-bottom:5px}
-  .card p{color:var(--muted);font-size:14px}
+  section{padding:64px 0}
+  .kicker{color:var(--green);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12.5px;margin-bottom:12px}
+  h2{font-size:clamp(26px,4vw,38px)}
+  .lead{color:var(--muted);margin-top:10px;max-width:60ch;font-size:17px}
 
-  .why{display:grid;grid-template-columns:1fr;gap:14px}
-  @media(min-width:680px){.why{grid-template-columns:1fr 1fr}}
-  .why .card{display:flex;gap:12px;align-items:flex-start}
-  .why .num{color:var(--accent);font-weight:800;font-size:20px;line-height:1.1}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:34px}
+  .card{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff;transition:.18s}
+  .card:hover{border-color:var(--green);box-shadow:0 6px 24px rgba(20,81,47,.07)}
+  .card h3{font-size:19px;margin-bottom:6px;color:var(--green-700)}
+  .card p{color:var(--muted);font-size:14.5px}
 
-  .area{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-  .pill{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px;color:var(--muted)}
+  /* split (about / find us) */
+  .split{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+  @media(min-width:820px){.split{grid-template-columns:1.05fr .95fr}.split.rev .media{order:2}}
+  .media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:16px}
+  .media{background:var(--green-50);border-radius:16px;min-height:280px}
 
-  .final{text-align:center;padding:56px 0 96px}
-  .final h2{font-size:30px}
-  .final p{color:var(--muted);margin:10px auto 24px;max-width:480px}
-  .final .btn-wa{display:inline-block;background:var(--wa);color:#04210f;padding:16px 30px;border-radius:14px;font-weight:800;text-decoration:none;font-size:17px}
+  .btn-solid{display:inline-block;margin-top:22px;background:var(--green);color:#fff;padding:14px 24px;
+    border-radius:11px;font-weight:600;text-decoration:none}
+  .btn-solid.alt{background:#fff;color:var(--green-700);border:1px solid var(--line)}
 
-  footer{padding:28px 0 110px;color:var(--muted);font-size:13px;text-align:center}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .pill{background:var(--green-50);border:1px solid #d9e6dd;border-radius:999px;padding:7px 14px;font-size:14px;color:var(--green-700)}
+
+  /* reviews */
+  .reviews{background:var(--green-50)}
+  .stars{color:#e0a92e;font-size:20px;letter-spacing:2px}
+
+  /* final */
+  .final{background:var(--green-700);color:#fff;text-align:center}
+  .final h2{font-size:clamp(28px,4.5vw,40px)}
+  .final p{color:#d6e6db;margin:12px auto 26px;max-width:42ch}
+  .final .btn-wa{display:inline-block;background:var(--wa);color:#04210f;padding:16px 30px;border-radius:12px;font-weight:600;text-decoration:none;font-size:17px}
+
+  footer{padding:34px 0 120px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;align-items:center}
+  footer a{color:var(--green-700);text-decoration:none;font-weight:600}
+  @media(min-width:860px){footer{padding-bottom:48px}}
 </style>
 </head>
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar"><div class="wrap">
+  <div class="brand"><b>JS</b> Auto Repairs</div>
+  <a class="call" href="tel:+447759336969">07759 336969</a>
+</div></div>
+
 <!-- HERO -->
-<header class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Milton · Stoke-on-Trent</p>
-    <h1>Honest car repairs,<br>without the dealership price.</h1>
-    <p class="sub">Local mechanic in Milton. Quick turnaround, fair prices, and a straight answer. Message on WhatsApp and get a quote back fast.</p>
-    <div class="hero-cta">
-      <a class="btn-wa" href="https://wa.me/447759336969?text=Hi%2C%20I%20need%20a%20quote%20for%20my%20car" target="_blank" rel="noopener">Message on WhatsApp</a>
-      <a class="btn-call" href="tel:+447759336969">Call 07759 336969</a>
-    </div>
-    <div class="trust">
-      <span><i class="dot"></i> Cheaper than the dealers</span>
-      <span><i class="dot"></i> Last-minute slots</span>
-      <span><i class="dot"></i> No job too small</span>
-    </div>
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">Independent garage · Stoke-on-Trent</span>
+  <h1>Honest car repairs, without the dealership price.</h1>
+  <p>Servicing, brakes, tyres, exhausts and more, done quick and done right. Message on WhatsApp and get a quote back fast.</p>
+  <div class="cta">
+    <a class="btn-wa" href="https://wa.me/447759336969?text=Hi%2C%20I%20need%20a%20quote%20for%20my%20car" target="_blank" rel="noopener">Message on WhatsApp</a>
+    <a class="btn-ghost" href="tel:+447759336969">Call 07759 336969</a>
   </div>
-</header>
+</div></header>
+
+<!-- TRUST STRIP -->
+<div class="trust"><div class="wrap">
+  <span><i class="tick">✓</i> Cheaper than the dealers</span>
+  <span><i class="tick">✓</i> Last-minute slots</span>
+  <span><i class="tick">✓</i> No job too small</span>
+  <span><i class="tick">✓</i> Straight answers, fair prices</span>
+</div></div>
 
 <!-- SERVICES -->
-<section>
-  <div class="wrap">
-    <h2>What we do</h2>
-    <p class="lead">Fast, common repairs done properly. If it's a quick fix, you won't be waiting days for it.</p>
-    <div class="grid">
-      <div class="card"><h3>Servicing & oil changes</h3><p>Keep it running right. Oil, filters and a once-over.</p></div>
-      <div class="card"><h3>Brakes</h3><p>Pads, discs and fluid. Stop squealing, stop fast.</p></div>
-      <div class="card"><h3>Tyres</h3><p>Supply and fitting. Sorted same day where we can.</p></div>
-      <div class="card"><h3>Exhausts</h3><p>Repairs and replacements, no faff.</p></div>
-      <div class="card"><h3>Diagnostics</h3><p>Engine light on? We'll read the fault and tell you straight.</p></div>
-      <div class="card"><h3>Welding</h3><p>Bodywork and exhaust welding. Not everyone offers it.</p></div>
-    </div>
+<section><div class="wrap">
+  <p class="kicker">What we do</p>
+  <h2>Common repairs, sorted properly</h2>
+  <p class="lead">Quick, everyday jobs that keep your car running and legal. If it's a fast fix, you won't be waiting days for it.</p>
+  <div class="grid">
+    <div class="card"><h3>Servicing &amp; oil</h3><p>Oil, filters and a full once-over to keep it healthy.</p></div>
+    <div class="card"><h3>Brakes</h3><p>Pads, discs and fluid. Stop the squeal, stop fast.</p></div>
+    <div class="card"><h3>Tyres</h3><p>Supplied and fitted, same day where we can.</p></div>
+    <div class="card"><h3>Exhausts</h3><p>Repairs and replacements, no faff.</p></div>
+    <div class="card"><h3>Diagnostics</h3><p>Engine light on? We read the fault and tell you straight.</p></div>
+    <div class="card"><h3>Welding</h3><p>Bodywork and exhaust welding. Not everyone offers it.</p></div>
   </div>
-</section>
+</div></section>
 
-<!-- WHY -->
-<section>
-  <div class="wrap">
-    <h2>Why people call us</h2>
-    <p class="lead">No middleman, no sales patter. Just a good mechanic you can actually get hold of.</p>
-    <div class="why">
-      <div class="card"><div class="num">1</div><div><h3>Fair, honest pricing</h3><p>You'll know the cost before we start. No surprise bills.</p></div></div>
-      <div class="card"><div class="num">2</div><div><h3>We pick up the phone</h3><p>Message on WhatsApp and get a real reply, not a call centre.</p></div></div>
-      <div class="card"><div class="num">3</div><div><h3>Quick when you're stuck</h3><p>Need it done last-minute? We'll fit you in where we can.</p></div></div>
-      <div class="card"><div class="num">4</div><div><h3>Years under the bonnet</h3><p>Experienced hands. The work's done right the first time.</p></div></div>
+<!-- ABOUT SPLIT -->
+<section style="padding-top:0"><div class="wrap">
+  <div class="split">
+    <div class="media"><img src="images/hero.jpg" alt="Mechanic working under a car on the ramp at JS Auto Repairs"></div>
+    <div>
+      <p class="kicker">Why people call us</p>
+      <h2>A good mechanic you can actually get hold of</h2>
+      <p class="lead">No middleman, no sales patter. Years under the bonnet, fair prices, and a reply on WhatsApp instead of a call centre. Need it done last-minute? We'll fit you in where we can.</p>
+      <a class="btn-solid" href="https://wa.me/447759336969?text=Hi%2C%20I%20need%20a%20quote%20for%20my%20car" target="_blank" rel="noopener">Get a quick quote</a>
     </div>
   </div>
-</section>
+</div></section>
 
-<!-- AREA -->
-<section>
-  <div class="wrap">
-    <h2>Where to find us</h2>
-    <p class="lead">Rear of 1841 Leek Road, Stoke-on-Trent, ST2 7AD. Covering Stoke and the surrounding area.</p>
-    <a class="btn-call" style="display:inline-block;padding:12px 20px;border-radius:12px;border:1px solid var(--line);text-decoration:none;font-weight:700;margin-bottom:18px" href="https://www.google.com/maps/search/?api=1&query=JS%20Auto%20Repairs%2C%201841%20Leek%20Road%2C%20Stoke-on-Trent%2C%20ST2%207AD" target="_blank" rel="noopener">Get directions</a>
-    <div class="area">
-      <span class="pill">Milton</span>
-      <span class="pill">Stoke-on-Trent</span>
-      <span class="pill">Norton</span>
-      <span class="pill">Sneyd Green</span>
-      <span class="pill">Bucknall</span>
-      <span class="pill">Abbey Hulton</span>
-      <span class="pill">Smallthorne</span>
+<!-- FIND US SPLIT -->
+<section style="padding-top:0"><div class="wrap">
+  <div class="split rev">
+    <div class="media"><img src="images/unit.jpg" alt="JS Auto Repairs garage unit on Leek Road, Stoke-on-Trent"></div>
+    <div>
+      <p class="kicker">Where to find us</p>
+      <h2>Rear of 1841 Leek Road, Stoke ST2 7AD</h2>
+      <p class="lead">Based just off Leek Road, covering Stoke-on-Trent and the surrounding area.</p>
+      <div class="pills">
+        <span class="pill">Milton</span><span class="pill">Norton</span><span class="pill">Bucknall</span>
+        <span class="pill">Abbey Hulton</span><span class="pill">Sneyd Green</span><span class="pill">Smallthorne</span>
+      </div>
+      <a class="btn-solid alt" href="https://www.google.com/maps/search/?api=1&query=JS%20Auto%20Repairs%2C%201841%20Leek%20Road%2C%20Stoke-on-Trent%2C%20ST2%207AD" target="_blank" rel="noopener">Get directions</a>
     </div>
   </div>
-</section>
+</div></section>
+
+<!-- REVIEWS -->
+<section class="reviews"><div class="wrap" style="text-align:center">
+  <p class="kicker" style="text-align:center">Reviews</p>
+  <h2>Trusted by local drivers</h2>
+  <p class="stars" style="margin:18px 0 6px">★★★★★</p>
+  <p class="lead" style="margin:0 auto">Happy with the work? Leave us a review on Google, it helps other local drivers find us. Reviews will appear here soon.</p>
+</div></section>
 
 <!-- FINAL CTA -->
-<section class="final">
-  <div class="wrap">
-    <h2>Got a problem with your car?</h2>
-    <p>Send a quick message with what's up and we'll get you a price. No obligation.</p>
-    <a class="btn-wa" href="https://wa.me/447759336969?text=Hi%2C%20I%20need%20a%20quote%20for%20my%20car" target="_blank" rel="noopener">Message on WhatsApp</a>
-  </div>
-</section>
+<section class="final"><div class="wrap">
+  <h2>Got a problem with your car?</h2>
+  <p>Send a quick message with what's up and we'll get you a price. No obligation.</p>
+  <a class="btn-wa" href="https://wa.me/447759336969?text=Hi%2C%20I%20need%20a%20quote%20for%20my%20car" target="_blank" rel="noopener">Message on WhatsApp</a>
+</div></section>
 
-<footer>
-  <div class="wrap">
-    JS Auto Repairs · Rear of 1841 Leek Road, Stoke-on-Trent, ST2 7AD · <a href="tel:+447759336969">07759 336969</a>
-  </div>
-</footer>
+<footer><div class="wrap">
+  <span>JS Auto Repairs · Rear of 1841 Leek Road, Stoke-on-Trent, ST2 7AD</span>
+  <a href="tel:+447759336969">07759 336969</a>
+</div></footer>
 
 <!-- STICKY MOBILE CTA -->
 <div class="cta-bar">
@@ -172,15 +218,15 @@
   <a class="btn-call" href="tel:+447759336969">Call</a>
 </div>
 
-<!-- LOCAL SEO: structured data so Google understands the business -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"AutoRepair",
   "name":"JS Auto Repairs",
-  "description":"Honest, affordable car servicing and repairs in Milton, Stoke-on-Trent. Brakes, tyres, exhausts, diagnostics and welding.",
-  "areaServed":["Milton","Stoke-on-Trent","Norton","Bucknall","Abbey Hulton"],
+  "description":"Honest, affordable car servicing and repairs in Stoke-on-Trent. Brakes, tyres, exhausts, diagnostics and welding.",
+  "areaServed":["Stoke-on-Trent","Milton","Norton","Bucknall","Abbey Hulton"],
   "telephone":"+447759336969",
+  "url":"https://jsautorepairs.github.io",
   "priceRange":"££",
   "address":{"@type":"PostalAddress","streetAddress":"Rear of 1841 Leek Road","addressLocality":"Stoke-on-Trent","postalCode":"ST2 7AD","addressCountry":"GB"},
   "hasMap":"https://www.google.com/maps/search/?api=1&query=JS%20Auto%20Repairs%2C%201841%20Leek%20Road%2C%20Stoke-on-Trent%2C%20ST2%207AD",
